@@ -6,7 +6,8 @@ This project is intended for users who need nginx with [ModSecurity](https://git
 on Ubuntu 22.04 LTS (Jammy) while keeping the stock Ubuntu nginx packages unchanged.   
 It focuses on stability and operational safety.
 
-This module is built against the official Ubuntu 22.04 LTS nginx source package and is ABI-compatible with the stock nginx
+This module is built against the official Ubuntu 22.04 LTS nginx source package and is ABI-compatible with the stock
+nginx
 binary.
 
 - Compatible with Ubuntu nginx packages
@@ -15,11 +16,13 @@ binary.
 - No dependencies on outside Ubuntu repositories
 - No need to compile nginx from the source
 
-`libnginx-mod-http-modsecurity` is [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx) [v1.0.4](https://github.com/owasp-modsecurity/ModSecurity-nginx/tree/v1.0.4)
+`libnginx-mod-http-modsecurity`
+is [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx) [v1.0.4](https://github.com/owasp-modsecurity/ModSecurity-nginx/tree/v1.0.4)
 that is the connection point between nginx and
 libmodsecurity ([ModSecurity](https://github.com/owasp-modsecurity/ModSecurity)) v3.
 
-This module is expected to continue working on Ubuntu 22.04 systems covered by Ubuntu [ESM](https://ubuntu.com/security/esm), as long as the stock Ubuntu nginx packages remain ABI-compatible.
+This module is expected to continue working on Ubuntu 22.04 systems covered by
+Ubuntu [ESM](https://ubuntu.com/security/esm), as long as the stock Ubuntu nginx packages remain ABI-compatible.
 
 ## Background
 
@@ -28,6 +31,7 @@ This module is expected to continue working on Ubuntu 22.04 systems covered by U
   it is not available for Ubuntu 22.04 LTS (Jammy)
 - Some users want to integrate [ModSecurity](https://github.com/owasp-modsecurity/ModSecurity) into their running nginx
 - Some users want to use the official Ubuntu nginx packages and avoid compiling from the source due to various reasons
+- Some users cannot use PPA due to various reasons
 - No one wants to break `libnginx-mod-http-modsecurity` when the official nginx package is updated
 - Some users need a reproducible and transparent build process  
   The build process is described in [Dockerfile](./Dockerfile).
@@ -48,7 +52,14 @@ This project is licensed under the Apache-2.0 License.
 docker build --build-arg TARGET_ARCH=$(uname -i) -t builder .
 ```
 
-If you don't build yourself, you can use [Releases](https://github.com/nidor1998/libnginx-mod-http-modsecurity/releases)
+If you don't want to build yourself, you can
+use [Releases](https://github.com/nidor1998/libnginx-mod-http-modsecurity/releases)  
+This is
+an  [immutable releases](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/immutable-releases)
+that is designed to be transparent, verifiable, and reproducible.
+
+You can check the build process, logs, and the artifact supply chain.
+Any commits and tags in this repository were signed and verified.
 
 ## How to install
 
@@ -104,13 +115,24 @@ from [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx) and ch
 
 For reproducibility, the build process is done in a Docker container and all apt packages are snapshotted.
 
-The build artifacts are expected to work with any Ubuntu 22.04 LTS (Jammy) nginx version. This is because Ubuntu maintainers
+The build artifacts are expected to work with any Ubuntu 22.04 LTS (Jammy) nginx version. This is because Ubuntu
+maintainers
 will not change nginx ABI in patch releases.
 
 But if something goes wrong, you can always build the module against the latest nginx source package.
 You can change the apt snapshot date with Docker `APT_SNAPSHOT_DATETIME` ARG and rebuild.
 
 The build process is described in [Dockerfile](./Dockerfile).
+
+## Roadmap
+
+This project is based on [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx), currently
+using [v1.0.4](https://github.com/owasp-modsecurity/ModSecurity-nginx/tree/v1.0.4).
+
+Future updates of this project will follow new releases
+of [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx).
+
+Note: `libmodsecurity3` and `nginx` themselves are maintained by Ubuntu and updated independently of this project.
 
 ## Disclaimer
 
