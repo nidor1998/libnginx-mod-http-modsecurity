@@ -1,0 +1,19 @@
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy main restricted
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy universe
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates universe
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy multiverse
+deb [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+deb [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security main restricted
+deb [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security universe
+deb [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security multiverse
+
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy main restricted
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy universe
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates universe
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy multiverse
+deb-src [snapshot=yes] http://archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+deb-src [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security main restricted
+deb-src [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security universe
+deb-src [snapshot=yes] http://security.ubuntu.com/ubuntu/ jammy-security multiverse
