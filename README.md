@@ -136,7 +136,7 @@ Note: `libmodsecurity3` and `nginx` themselves are maintained by Ubuntu and upda
 
 ## Disclaimer
 
-This is not Ubuntu official package.
+This is not an Ubuntu official package.
 
 This is just a build tool for `libnginx-mod-http-modsecurity` package for Ubuntu 22.04 LTS (Jammy).  
 This is not a [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx)
