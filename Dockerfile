@@ -5,7 +5,10 @@ FROM ubuntu:jammy-20251013
 # Current snapshot is for nginx:1.18.0-6ubuntu14.7
 ARG APT_SNAPSHOT_DATETIME=20251221T000000Z
 
-# Specify the version of the ModSecurity NGINX connector to use
+# Specify the version of the nginx source code to use
+ARG NGINX_VERSION=1.18.0-6ubuntu14.7
+
+# Specify the version of the ModSecurity-nginx to use
 ARG NGINX_CONNECTOR_VERSION=v1.0.4
 
 # Specify target architecture (x86_64 or aarch64)
@@ -29,7 +32,7 @@ WORKDIR /build
 
 # Download nginx/ModSecurity-nginx source code
 # Ubuntu 22.04 LTS (Jammy) ships with nginx 1.18.0
-RUN apt-get --snapshot ${APT_SNAPSHOT_DATETIME} source nginx-core \
+RUN apt-get --snapshot ${APT_SNAPSHOT_DATETIME} source nginx-core=${NGINX_VERSION} \
 && cd nginx-1.18.0/debian/modules \
 && git clone https://github.com/owasp-modsecurity/ModSecurity-nginx.git http-modsecurity \
 && cd http-modsecurity \
