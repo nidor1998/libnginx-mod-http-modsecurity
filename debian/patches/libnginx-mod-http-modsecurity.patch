@@ -115,7 +115,7 @@ Index: nginx-1.18.0/debian/changelog
 --- nginx-1.18.0.orig/debian/changelog
 +++ nginx-1.18.0/debian/changelog
 @@ -1,3 +1,9 @@
-+nginx (1.18.0-6ubuntu14.7+modsecurity104) jammy; urgency=medium
++nginx (1.18.0-6ubuntu14.7+connector104) jammy; urgency=medium
 +
 +  * Unofficial build for ModSecurity-nginx connector v1.0.4
 +

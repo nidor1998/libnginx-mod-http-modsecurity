@@ -72,12 +72,13 @@ sudo apt --fix-broken install
 
 # Install modsecurity-crs (if required)
 sudo apt install modsecurity-crs
- 
+
 # Install libnginx-mod-http-modsecurity (x86_64)
-sudo dpkg -i ./libnginx-mod-http-modsecurity_1.18.0-6ubuntu14.7+modsecurity104_amd64.deb
+sudo dpkg -i ./libnginx-mod-http-modsecurity_1.18.0-6ubuntu14.7+connector104_amd64.deb
 
 # Install libnginx-mod-http-modsecurity (aarch64)
-sudo dpkg -i ./libnginx-mod-http-modsecurity_1.18.0-6ubuntu14.7+modsecurity104_arm64.deb
+sudo dpkg -i libnginx-mod-http-modsecurity_1.18.0-6ubuntu14.7+connector104_arm64.deb
+
 ```
 
 ## How to configure
