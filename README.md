@@ -32,7 +32,7 @@ Ubuntu [ESM](https://ubuntu.com/security/esm), as long as the stock Ubuntu nginx
 - Some users want to integrate [ModSecurity](https://github.com/owasp-modsecurity/ModSecurity) into their running nginx
 - Some users want to use the official Ubuntu nginx packages and avoid compiling from the source due to various reasons
 - Some users cannot use PPA due to various reasons
-- No one wants to break `libnginx-mod-http-modsecurity` when the official nginx package is updated
+- No one wants to break [ModSecurity-nginx](https://github.com/SpiderLabs/ModSecurity-nginx) when the official nginx package is updated
 - Some users need a reproducible and transparent build process  
   The build process is described in [Dockerfile](./Dockerfile).
 
